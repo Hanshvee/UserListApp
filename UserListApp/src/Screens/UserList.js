@@ -1,7 +1,6 @@
 import { View, Text, FlatList, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { useEffect, useState } from "react";
-import { Link } from 'expo-router';
 
 export default function UserList() {
     const [data, setData] = useState([]);
@@ -31,16 +30,14 @@ export default function UserList() {
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Link href="/UserDetails" asChild>
-                            <View>
-                                <Pressable>
-                                    <Text style={styles.title}>{item.name}</Text>
-                                    <Text style={styles.subtitle}>{item.email}</Text>
-                                    <Text style={styles.subtitle}>{item.address.city}</Text>
-                                </Pressable>
+                        <View>
+                            <Pressable>
+                                <Text style={styles.title}>{item.name}</Text>
+                                <Text style={styles.subtitle}>{item.email}</Text>
+                                <Text style={styles.subtitle}>{item.address.city}</Text>
+                            </Pressable>
 
-                            </View>
-                        </Link>
+                        </View>
                     </View>
                 )}
             />
