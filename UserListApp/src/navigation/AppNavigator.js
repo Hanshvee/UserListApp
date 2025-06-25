@@ -9,7 +9,8 @@ const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
     return (
-        <Stack.Navigator >
+        // Setting Navigators 
+        <Stack.Navigator initialRouteName='Users'>
             <Stack.Screen name="Users" component={UserList} />
             <Stack.Screen name="UserDetails" component={UserDetailsScreen} />
         </Stack.Navigator>
